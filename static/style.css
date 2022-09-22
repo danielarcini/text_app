@@ -1,0 +1,223 @@
+:root {
+    --bg-dark: #242423;
+    --bg-light: #424442;
+    --fg-light: #E8EDDF;
+    --callout: rgb(183, 43, 43);
+    --callout-dark: #101010;
+  }
+  
+  * {
+      font-size: 14px;
+  }
+
+  html, body, main {
+      background-color: var(--bg-dark);
+      color: #fff;
+      font-family: "Inter", Arial, Helvetica, sans-serif, "Noto Color Emoji";
+      font-weight: 400;
+      text-shadow: rgb(77, 81, 86) 0px 0px 0px;
+      height: 100%;
+  }
+  
+  main {
+      display: flex;
+  }
+  
+  button:hover:not(.active) {
+      filter: brightness(1.15);
+      cursor: pointer;
+  }
+  
+  #sidebar {
+      flex: 3 30%;
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+      background-color: var(--bg-dark);
+  }
+  
+  #room-list {
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+      flex: 1;
+  }
+  
+  #sidebar button {
+      height: 40px;
+      margin-bottom: 1px;
+      background: var(--bg-dark);
+      color: #fff;
+      overflow: hidden;
+  }
+  
+  #sidebar button.active {
+      background: var(--bg-light);
+      color: var(--callout);
+      font-weight: bold;
+      box-shadow: 0px 2px 2px rgba(114, 105, 105, 0.9);
+      z-index: 10;
+  }
+  
+  #content {
+      flex: 7 100%;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .message {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 0;
+  }
+  
+  .message:last-child {
+      padding-bottom: 20px;
+  }
+  
+  .message .username {
+      font-weight: bold;
+      padding-bottom: 5px;
+      color: var(--callout);
+  }
+  
+  #messages {
+      padding: 10px 20px;
+      flex: 1;
+  }
+  
+  form#new-message {
+      bottom: 0;
+      position: sticky;
+      flex: 0 0 auto;
+      width: 100%;
+  }
+  
+  form {
+      display: flex;
+      border-top: 2px solid #242424;
+  }
+  
+  form * {
+      height: 40px;
+      background: var(--fg-light);
+      color: var(--bg-dark);
+  }
+  
+  input {
+      padding: 0 10px;
+  }
+  
+  input:focus {
+      outline: 0;
+      filter: brightness(1.05);
+  }
+  
+  input#username {
+      text-align: right;
+      flex: 1 25%;
+      width: 25%;
+      border-right: 1px solid #303030;
+  }
+ 
+  
+  input#message {
+      flex: 10 100%;
+  }
+  
+  form button {
+      padding: 0 10px;
+  }
+  
+  #sidebar #new-room {
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: row;
+  }
+  
+  #new-room input:focus, #new-room button:hover {
+      filter: brightness(1.1);
+  }
+  #new-room button:hover {
+    background-color: black;
+  }
+  
+  #new-room input {
+      flex: 8 80%;
+      width: 20%;
+      background-color: var(--callout-dark);
+      color: #fff;
+  }
+  
+  #new-room button {
+      flex: 2 20%;
+      width: 20%;
+      background-color: var(--bg-light);
+  }
+  
+  #status {
+      padding: 5px 10px;
+      margin-right: 7px;
+      margin-left: 5px;
+      text-align: center;
+      font-size: 12px;
+  }
+  .pending {
+    border-radius: 5px;
+  }
+  .connected {
+    border-radius: 5px;
+  }
+  .reconnecting {
+    border-radius: 5px;
+  }
+  
+  #status.pending::before {
+    content: "status: connected";
+  }
+  
+  #status.pending {
+      background-color: yellow;
+      color: #000;
+  }
+  
+  #status.connected::before {
+    content: "status: connected";
+  }
+  
+  #status.connected {
+      background-color: green;
+      color: #fff;
+      font-size: 13px;
+  }
+  
+  #status.reconnecting::before {
+    content: "status: disconnected";
+    font-size: 14px;
+  }
+  
+  #status.reconnecting {
+      background-color: red;
+      color: #fff;
+  }
+
+  /*.mssg{
+    border: 4px solid red;
+  }*/
+  .mssg-card{
+    background-color: rgb(23, 23, 23);
+    border-radius: 8px;
+    box-shadow: 0px 1.25px 5px rgb(131, 136, 152);
+    margin: 16px;
+  }
+
+   /*.rooml{
+    border: 4px solid red;
+  } */
+  .room-l{
+    background-color: rgb(23, 23, 23);
+    border-radius: 8px;
+    box-shadow: 0px 1px 4.5px rgb(131, 136, 152);
+    margin: 10px;
+  }
